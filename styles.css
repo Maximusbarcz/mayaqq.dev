@@ -1,19 +1,19 @@
 .linkImg {
-    border-radius: 50%;
     transform: scale(1);
     transition: transform 0.2s ease-in-out;
 }
 .linkImg:hover {
-    transform: scale(1.2);  /* Increase the scale on hover */
+    transform: scale(1.2);
 }
 
 .pfp {
     border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
 }
 
-@keyframes fadein {
-    from {opacity: 0;}
-    to {opacity: 1;}
+.pfp:hover {
+    transform: scale(1.2);
 }
 
 p {
@@ -23,21 +23,67 @@ h1 {
     margin: 0.7px;
 }
 
-.myDiv {
+.bioDiv {
     text-align: center;
-    padding: 0;
-    color: white;
-    position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 0;
+
+    color: white;
     font-family: "JetBrains Mono", monospace;
     font-size: 20px;
-    animation: fadein 1s ease-in-out;  /* Add this line */
+
+    animation: fadein 1s ease-in-out;
 }
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 .container {
     display: flex;
     flex-direction: column;
     background: #181A1B
+}
+
+/* Style the modal window */
+.modal {
+    display: none; /* Hide the modal window by default */
+    position: fixed; /* Make the modal window fixed positioned */
+    z-index: 1; /* Set the z-index to a high value */
+    left: 0;
+    top: 0;
+    width: 100%; /* Set the width of the modal window to the width of the screen */
+    height: 100%; /* Set the height of the modal window to the height of the screen */
+    overflow: auto; /* Enable scrollbars if the content is taller than the screen */
+    background-color: rgba(0, 0, 0, 0.4); /* Set the background color to a semi-transparent black */
+}
+
+/* Style the modal content */
+.modal-content {
+    position: relative; /* Make the content relative positioned */
+    top: 50%; /* Center the content vertically */
+    transform: translateY(-50%); /* Center the content vertically */
+    background-color: black; /* Set the background color to white */
+    border-radius: 5%;
+    padding: 20px; /* Add some padding to the content */
+    width: 80%; /* Set the width of the content to 80% of the screen width */
+    max-width: 500px; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center the content horizontally */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add a drop shadow to the content */
+
+    transition: transform 0.2s ease-in-out;
+}
+
+.modal-content:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Style the image in the modal content */
+.modal-image {
+    width: 100%; /* Set the width of the image to 100% of the content width */
 }

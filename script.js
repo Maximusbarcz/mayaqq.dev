@@ -9,9 +9,27 @@ var phrases = [
     'I code minecraft mods'
 ];
 
-// Get a reference to the p element
 var phraseElement = document.getElementById('phrase');
 
-// Set the text of the p element to a random phrase from the array
 phraseElement.textContent = phrases[Math.floor(Math.random() * phrases.length)];
 
+var sound = document.getElementById("sound");
+var image = document.getElementById("pfp");
+var modal = document.getElementById("modal");
+
+// Listen for the click event on the image
+image.addEventListener("click", function() {
+    // Play the sound
+    sound.play();
+    modal.style.display = "block";
+});
+
+modal.addEventListener("click", function(event) {
+    // If the user clicks on the modal window, but not on the modal content, close the modal window
+    if (event.target === this) {
+        this.style.display = "none";
+        sound.pause();
+    } else {
+        sound.play();
+    }
+});
