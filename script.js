@@ -16,6 +16,12 @@ phraseElement.textContent = phrases[Math.floor(Math.random() * phrases.length)];
 var sound = document.getElementById("sound");
 var image = document.getElementById("pfp");
 var modal = document.getElementById("modal");
+var slider = document.getElementById("volume-slider");
+
+slider.addEventListener('input', function() {
+    sound.volume = slider.value / 100;
+});
+
 
 // Listen for the click event on the image
 image.addEventListener("click", function() {
