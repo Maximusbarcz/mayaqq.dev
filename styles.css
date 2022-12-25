@@ -1,0 +1,43 @@
+.linkImg {
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+}
+.linkImg:hover {
+    transform: scale(1.2);  /* Increase the scale on hover */
+}
+
+.pfp {
+    border-radius: 50%;
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+p {
+    margin: 0.7px;
+}
+h1 {
+    margin: 0.7px;
+}
+
+.myDiv {
+    text-align: center;
+    padding: 0;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 20px;
+    animation: fadein 1s ease-in-out;  /* Add this line */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    background: #181A1B
+}
