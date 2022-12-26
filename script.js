@@ -13,12 +13,19 @@ var phraseElement = document.getElementById('phrase');
 
 phraseElement.textContent = phrases[Math.floor(Math.random() * phrases.length)];
 
-var sound = document.getElementById("sound");
+const currentMonth = new Date().getMonth();
+
+var sound = null;
+
+if (currentMonth === 11) {
+    sound = document.getElementById('sound2');
+} else {
+    sound = document.getElementById('sound');
+}
+
 var image = document.getElementById("pfp");
 var modal = document.getElementById("modal");
 var slider = document.getElementById("volume-slider");
-
-var sombrero = document.getElementById("sombrero");
 
 slider.addEventListener('input', function() {
     sound.volume = slider.value / 100;
@@ -37,7 +44,5 @@ modal.addEventListener("click", function(event) {
     if (event.target === this) {
         this.style.display = "none";
         sound.pause();
-    } else {
-        sound.play();
     }
 });
