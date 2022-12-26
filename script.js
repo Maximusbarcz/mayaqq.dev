@@ -18,6 +18,8 @@ var image = document.getElementById("pfp");
 var modal = document.getElementById("modal");
 var slider = document.getElementById("volume-slider");
 
+var sombrero = document.getElementById("sombrero");
+
 slider.addEventListener('input', function() {
     sound.volume = slider.value / 100;
 });
