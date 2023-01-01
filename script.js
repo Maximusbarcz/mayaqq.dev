@@ -23,7 +23,7 @@ if (currentMonth === 11) {
     sound = document.getElementById('sound');
 }
 
-var image = document.getElementById("pfp");
+var image = document.getElementsByClassName("pfp")[0];
 var modal = document.getElementById("modal");
 var slider = document.getElementById("volume-slider");
 
