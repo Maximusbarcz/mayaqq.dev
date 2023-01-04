@@ -76,6 +76,8 @@ typeWriter();
 
 const currentMonth = new Date().getMonth();
 
+var sound = document.getElementById('sound');
+
 var image = document.getElementsByClassName("pfp")[0];
 var modal = document.getElementById("modal");
 var slider = document.getElementById("volume-slider");
@@ -103,5 +105,13 @@ moreInfo.addEventListener("click", function(event) {
     // If the user clicks on the modal window, but not on the modal content, close the modal window
     if (event.target === this) {
         this.style.display = "none";
+    }
+});
+
+window.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        modal.style.display = "none";
+        moreInfo.style.display = "none";
+        sound.pause();
     }
 });

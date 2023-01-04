@@ -108,11 +108,7 @@ h1 {
     height: 100%; /* Set the height of the modal window to the height of the screen */
     overflow-y: auto; /* Enable scrollbars if the content is taller than the screen */
     background-color: rgba(0, 0, 0, 0.4); /* Set the background color to a semi-transparent black */
-    animation: fadeinfast 0.5s ease-in-out;
-}
-@keyframes fadeinfast {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    animation: fadein 0.5s ease-in-out;
 }
 
 .more-info-content {
