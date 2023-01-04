@@ -34,9 +34,17 @@ var phrases = [
     'a digital magician',
 ];
 
+var phraseElement = document.getElementById('phrase');
+var titleElement = document.getElementById('title');
+var moreInfo = document.getElementById('more-info');
+
+
+titleElement.addEventListener('click', function () {
+    moreInfo.style.display = 'block';
+});
+
 function typeWriter() {
 
-    var phraseElement = document.getElementById('phrase');
     var txt = phrases[Math.floor(Math.random() * phrases.length)];
     var i = 0;
     var speed = 50;
@@ -68,14 +76,6 @@ typeWriter();
 
 const currentMonth = new Date().getMonth();
 
-var sound = null;
-
-if (currentMonth === 11) {
-    sound = document.getElementById('sound2');
-} else {
-    sound = document.getElementById('sound');
-}
-
 var image = document.getElementsByClassName("pfp")[0];
 var modal = document.getElementById("modal");
 var slider = document.getElementById("volume-slider");
@@ -97,5 +97,11 @@ modal.addEventListener("click", function(event) {
     if (event.target === this) {
         this.style.display = "none";
         sound.pause();
+    }
+});
+moreInfo.addEventListener("click", function(event) {
+    // If the user clicks on the modal window, but not on the modal content, close the modal window
+    if (event.target === this) {
+        this.style.display = "none";
     }
 });
