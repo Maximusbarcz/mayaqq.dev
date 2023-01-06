@@ -103,7 +103,7 @@ h1 {
     z-index: 3; /* Set the z-index to a high value */
     left: 0;
     top: 0;
-    padding-top: 12%;
+    /* padding-top: 12%; */
     width: 100%; /* Set the width of the modal window to the width of the screen */
     height: 100%; /* Set the height of the modal window to the height of the screen */
     overflow-y: auto; /* Enable scrollbars if the content is taller than the screen */
@@ -116,13 +116,13 @@ h1 {
     font-family: "JetBrains Mono", monospace;
     font-size: 20px;
     position: relative; /* Make the content relative positioned */
-    top: 50%; /* Center the content vertically */
-    transform: translateY(-50%); /* Center the content vertically */
+    /* top: 50%; */ /* Center the content vertically */
+    /* transform: translateY(-50%); */ /* Center the content vertically */
     background-color: black;
     border-radius: 1%;
     overflow-y: auto;
     padding: 30px; /* Add some padding to the content */
     width: 80%; /* Set the width of the content to 80% of the screen width */
-    margin: 0 auto; /* Center the content horizontally */
+    margin: 12% auto; /* Center the content horizontally */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add a drop shadow to the content */
 }
