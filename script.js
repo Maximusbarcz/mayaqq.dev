@@ -32,6 +32,7 @@ var phrases = [
     'a hacker (in the good sense)',
     'a digital alchemist',
     'a digital magician',
+    'a person who has something happen when you click my name (or pfp)',
 ];
 
 var phraseElement = document.getElementById('phrase');
