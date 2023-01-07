@@ -39,7 +39,6 @@ var phraseElement = document.getElementById('phrase');
 var titleElement = document.getElementById('title');
 var moreInfo = document.getElementById('more-info');
 
-
 titleElement.addEventListener('click', function () {
     moreInfo.style.display = 'block';
 });
