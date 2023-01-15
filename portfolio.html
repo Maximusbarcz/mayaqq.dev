@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <style>
+    .body {
+      background: #181A1B url("sun.jpg") no-repeat fixed center;);
+      background-size: cover;
+      display: grid;
+      place-items: center;
+      animation: fadein 1s ease-in-out;
+
+    }
+    .star {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      transform: scale(1);
+      box-sizing: border-box;
+      cursor: pointer;
+      box-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff;
+      transition: transform 0.2s ease-in-out;
+      z-index: 3; /* Set the z-index to a high value */
+    }
+    .star::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+      left: -10px;
+    }
+
+    .star:hover {
+      transform: scale(1.5);
+    }
+    .title {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 50px;
+      color: #fff;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      padding: 0;
+    }
+    @keyframes fadein {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body class="body">
+<div class="star-container"></div>
+  <div class="title">
+    <h1>My Portfolio</h1>
+  </div>
+
+</body>
+<script>
+  // Select the star container
+  const starContainer = document.querySelector(".star-container");
+  // Create a for loop to generate 10 stars
+  for (let i = 0; i < 7; i++) {
+    // Create a new div element for the star
+    let star = document.createElement("div");
+    // Give the star a class name
+    star.classList.add("star");
+    //set the id of the star
+    star.setAttribute("data-star-id", i+1); // set the id of star
+    // Generate random positions for the star
+    let x = Math.floor(Math.random() * 100);
+    let y = Math.floor(Math.random() * 100);
+    // Set the star's position using the generated x and y values
+    star.style.left = x + "%";
+    star.style.top = y + "%";
+    // Append the star to the star container
+    starContainer.appendChild(star);
+
+    // Select all the stars
+    const stars = document.querySelectorAll(".star");
+
+// Add a click event to each star
+    stars.forEach(star => {
+      star.addEventListener("click", () => {
+        let starId = star.getAttribute("data-star-id");
+        switch (starId) {
+          case "1":
+            window.location.href = "https://github.com/MayaqqDev/ygasi";
+            break;
+          case "2":
+            window.location.href = "https://github.com/MayaqqDev/ChatToggle";
+            break;
+          case "3":
+            window.location.href = "https://github.com/MayaqqDev/mayaqq.dev";
+            break;
+          case "4":
+            window.location.href = "https://github.com/MayaqqDev/shade-bot";
+            break;
+          case "5":
+            window.location.href = "https://github.com/MayaqqDev/scorebar";
+            break;
+          case "6":
+            window.location.href = "https://github.com/MayaqqDev/AutoWB";
+            break;
+          default:
+            break;
+        }
+      });
+    });}
+  modal.addEventListener("click", function(event) {
+    // If the user clicks on the modal window, but not on the modal content, close the modal window
+    if (event.target === this) {
+      this.style.display = "none";
+    }
+  });
+</script>
+</html>
