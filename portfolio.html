@@ -1,122 +1,235 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Portfolio</title>
-  <style>
-    .body {
-      background: #181A1B url("sun.jpg") no-repeat fixed center;);
-      background-size: cover;
-      display: grid;
-      place-items: center;
-      animation: fadein 1s ease-in-out;
+    <title>My Portfolio</title>
+    <style>
+        .body {
+            background: black;
+            background-size: cover;
+            display: grid;
+            place-items: center;
+            animation: fadein 1s ease-in-out;
+            font-family: "JetBrains Mono", monospace;
 
-    }
-    .star {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #fff;
-      transform: scale(1);
-      box-sizing: border-box;
-      cursor: pointer;
-      box-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff;
-      transition: transform 0.2s ease-in-out;
-      z-index: 3; /* Set the z-index to a high value */
-    }
-    .star::before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      bottom: -10px;
-      left: -10px;
-    }
+        }
 
-    .star:hover {
-      transform: scale(1.5);
-    }
-    .title {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 50px;
-      color: #fff;
-      text-align: center;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      position: absolute;
-      padding: 0;
-    }
-    @keyframes fadein {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-  </style>
+        .black-hole-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .black-hole {
+            width: 1000px;
+            height: 1000px;
+            border-radius: 50%; /* 50px / 2 = 25px */
+            background-color: black;
+            box-shadow: 0 0 100px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff;
+        }
+
+        .star {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            transform: scale(1);
+            box-sizing: border-box;
+            cursor: pointer;
+            box-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff;
+            transition: transform 0.2s ease-in-out;
+            z-index: 3; /* Set the z-index to a high value */
+        }
+
+        .star::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+        }
+
+        .star:hover {
+            transform: scale(1.5);
+        }
+
+        .title {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            position: absolute;
+            padding: 0;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tooltip {
+            text-align: center;
+            display: none;
+            font-family: "JetBrains Mono", monospace;
+            position: fixed;
+            background-color: #181A1B;
+            width: 460px;
+            color: white;
+            padding: 10px;
+            border-radius: 5%;
+            z-index: 5;
+            animation: fadein 0.2s ease-in-out;
+        }
+
+        img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5%;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body class="body">
+<div class="black-hole-container">
+    <div class="black-hole"></div>
+</div>
 <div class="star-container"></div>
-  <div class="title">
+<div class="title">
     <h1>My Portfolio</h1>
-  </div>
+</div>
+<div class="tooltip"></div>
 
 </body>
 <script>
-  // Select the star container
-  const starContainer = document.querySelector(".star-container");
-  // Create a for loop to generate 10 stars
-  for (let i = 0; i < 7; i++) {
-    // Create a new div element for the star
-    let star = document.createElement("div");
-    // Give the star a class name
-    star.classList.add("star");
-    //set the id of the star
-    star.setAttribute("data-star-id", i+1); // set the id of star
-    // Generate random positions for the star
-    let x = Math.floor(Math.random() * 100);
-    let y = Math.floor(Math.random() * 100);
-    // Set the star's position using the generated x and y values
-    star.style.left = x + "%";
-    star.style.top = y + "%";
-    // Append the star to the star container
-    starContainer.appendChild(star);
+    // Select the star container
+    const starContainer = document.querySelector(".star-container");
+    // Create a for loop to generate 10 stars
+    for (let i = 0; i < 7; i++) {
+        // Create a new div element for the star
+        let star = document.createElement("div");
+        // Give the star a class name
+        star.classList.add("star");
+        //set the id of the star
+        star.setAttribute("data-star-id", i + 1); // set the id of star
+        // Generate random positions for the star
+        let x = Math.floor(Math.random() * 100);
+        let y = Math.floor(Math.random() * 100);
+        // Set the star's position using the generated x and y values
+        star.style.left = x + "%";
+        star.style.top = y + "%";
+        // Append the star to the star container
+        starContainer.appendChild(star);
 
-    // Select all the stars
-    const stars = document.querySelectorAll(".star");
-
-// Add a click event to each star
-    stars.forEach(star => {
-      star.addEventListener("click", () => {
-        let starId = star.getAttribute("data-star-id");
-        switch (starId) {
-          case "1":
-            window.location.href = "https://github.com/MayaqqDev/ygasi";
-            break;
-          case "2":
-            window.location.href = "https://github.com/MayaqqDev/ChatToggle";
-            break;
-          case "3":
-            window.location.href = "https://github.com/MayaqqDev/mayaqq.dev";
-            break;
-          case "4":
-            window.location.href = "https://github.com/MayaqqDev/shade-bot";
-            break;
-          case "5":
-            window.location.href = "https://github.com/MayaqqDev/scorebar";
-            break;
-          case "6":
-            window.location.href = "https://github.com/MayaqqDev/AutoWB";
-            break;
-          default:
-            break;
-        }
-      });
-    });}
-  modal.addEventListener("click", function(event) {
-    // If the user clicks on the modal window, but not on the modal content, close the modal window
-    if (event.target === this) {
-      this.style.display = "none";
     }
-  });
+    const stars = document.querySelectorAll(".star");
+    const tooltip = document.querySelector(".tooltip");
+    stars.forEach(star => {
+        star.addEventListener("mouseover", (event) => {
+            // Get the ID of the star
+            let starId = event.target.getAttribute("data-star-id");
+            // Select the tooltip
+            const tooltip = document.querySelector(".tooltip");
+            // Set the position of the tooltip to be just above and to the right of the star
+            tooltip.style.left = event.clientX + 10 + "px";
+            tooltip.style.top = event.clientY - tooltip.offsetHeight - 10 + "px";
+            switch (starId) {
+                case "1":
+                    tooltip.innerHTML = "<h2>You've got a skill issue</h2>" +
+                        "<p>It's not that you don't have the skills, it's that you don't have the right skills.</p>";
+                    break;
+                case "2":
+                    tooltip.innerHTML = "<h2>AutoWB</h2>" +
+                        "<p>AutoWB says welcome back to your friends and guild mates on hypixel (automatically).</p>" +
+                        "<img src='https://cdn-raw.modrinth.com/data/NKmLh0mb/85d0c1ded17fa7fb983fc0648d7fb675b5d96734.png'>";
+                    break;
+                case "3":
+                    tooltip.innerHTML = "<h2>mayaqq.dev</h2>" +
+                        "<p>The website you are looking at right now.</p>" +
+                        "<img src='https://camo.githubusercontent.com/b62688498d7393c2559c037dfa515a437b67719c3835d2be7224267ab83fdfaf/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f617661746172732f3639383632333232333837323335363431332f35353935646436663438626665623164646633616165666362363038353338622e706e673f73697a653d31303234'>";
+                    break;
+                case "4":
+                    tooltip.innerHTML = "<h2>ChatToggle</h2>" +
+                        "<p>Makes /ftbteams msg auto prefix in front of your messages (customizable and toggolable).</p>" +
+                        "<img src='https://cdn-raw.modrinth.com/data/k6aAChpa/f18ee9c6ecd2c1863a5012554b2c082167c84cca.png'>";
+                    break;
+                case "5":
+                    tooltip.innerHTML = "<h2>Calcium</h2>" +
+                        "<p>A very serious optimization mod.</p>" +
+                        "<img src='https://raw.githubusercontent.com/MayaqqDev/Calcium/1.19/src/main/resources/assets/calcium/icon.png'>";
+                    break;
+                case "6":
+                    tooltip.innerHTML = "<h2>Shade-bot</h2>" +
+                        "<p>A discord bot with a few cool features.</p>" +
+                        "<img src='https://images-ext-1.discordapp.net/external/bWpIC62Fv96oerqgZiT0fjk3Wbg1pjyXcGy-YXINSLE/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/1006536030733729873/c2d4e4b6b6faefb14f9a2292ebe376ef.png?width=885&height=885'>";
+                    break;
+                case "7":
+                    tooltip.innerHTML = "<h2>Scorebar</h2>" +
+                        "<p>Allows you to disable the bossbar and scoreboard.</p>" +
+                        "<img src='https://cdn-raw.modrinth.com/data/gFY1dpaz/0552b8c9ac51e317b268b819b6ef4364862670a6.png'>";
+                    break;
+                default:
+                    break;
+            }
+            // Check if the tooltip is going out of the window //this is not working
+            if (tooltip.offsetLeft + tooltip.offsetWidth > window.innerWidth) {
+                tooltip.style.left = window.innerWidth - tooltip.offsetWidth - 10 + "px";
+            }
+            if (tooltip.offsetTop + tooltip.offsetHeight > window.innerHeight) {
+                tooltip.style.top = window.innerHeight - tooltip.offsetHeight - 10 + "px";
+            }
+            // Show the tooltip
+            tooltip.style.display = "block";
+        });
+        star.addEventListener("mouseout", () => {
+            const tooltip = document.querySelector(".tooltip");
+            tooltip.style.display = 'none';
+
+        });
+        star.addEventListener("click", () => {
+            let starId = star.getAttribute("data-star-id");
+            switch (starId) {
+                case "1":
+                    window.open("https://github.com/MayaqqDev/ygasi");
+                    break;
+                case "2":
+                    window.open("https://github.com/MayaqqDev/AutoWB");
+                    break;
+                case "3":
+                    window.open("https://mayaqq.dev");
+                    break;
+                case "4":
+                    window.open("https://github.com/MayaqqDev/ChatToggle");
+                    break;
+                case "5":
+                    window.open("https://github.com/MayaqqDev/Calcium");
+                    break;
+                case "6":
+                    window.open("https://github.com/MayaqqDev/shade-bot");
+                    break;
+                case "7":
+                    window.open("https://github.com/MayaqqDev/scorebar");
+                    break;
+                default:
+                    break;
+            }
+        });
+    });
 </script>
 </html>
