@@ -121,23 +121,31 @@
     // Select the star container
     const starContainer = document.querySelector(".star-container");
     // Create a for loop to generate 10 stars
-    for (let i = 0; i < 7; i++) {
-        // Create a new div element for the star
-        let star = document.createElement("div");
-        // Give the star a class name
-        star.classList.add("star");
-        //set the id of the star
-        star.setAttribute("data-star-id", i + 1); // set the id of star
-        // Generate random positions for the star
-        let x = Math.floor(Math.random() * 100);
-        let y = Math.floor(Math.random() * 100);
-        // Set the star's position using the generated x and y values
-        star.style.left = x + "%";
-        star.style.top = y + "%";
-        // Append the star to the star container
-        starContainer.appendChild(star);
+    var starCount = 7;
+    function genStars() {
+        const stars = document.querySelectorAll(".star");
+        stars.forEach((star) => {
+            star.remove();
+        });
+        for (let i = 0; i < starCount; i++) {
+            // Create a new div element for the star
+            let star = document.createElement("div");
+            // Give the star a class name
+            star.classList.add("star");
+            //set the id of the star
+            star.setAttribute("data-star-id", i + 1); // set the id of star
+            // Generate random positions for the star
+            let x = Math.floor(Math.random() * 100);
+            let y = Math.floor(Math.random() * 100);
+            // Set the star's position using the generated x and y values
+            star.style.left = x + "%";
+            star.style.top = y + "%";
+            // Append the star to the star container
+            starContainer.appendChild(star);
 
+        }
     }
+    genStars();
     const stars = document.querySelectorAll(".star");
     const tooltip = document.querySelector(".tooltip");
     stars.forEach(star => {
