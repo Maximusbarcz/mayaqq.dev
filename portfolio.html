@@ -6,7 +6,7 @@
     <meta content="Mayaqq" property="og:title" />
     <meta content="Mayaqq's Portfolio" property="og:description" />
     <meta content="https://mayaqq.dev/portfolio" property="og:url" />
-    <meta content="https://cdn.discordapp.com/avatars/698623223872356413/5595dd6f48bfeb1ddf3aaefcb608538b.png?size=1024" property="og:image" />
+    <meta content="avtar.webp" property="og:image" />
     <meta content="#F9A7FF" name="theme-color" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="https://media.tenor.com/gVFmqlEGtasAAAAC/cat-dancing.gif">
@@ -121,6 +121,7 @@
 <div class="star-container"></div>
 <div class="title">
     <h1>My Portfolio</h1>
+    <p>(hover over the stars)</p>
 </div>
 <div class="tooltip"></div>
 
@@ -155,7 +156,6 @@
     }
     genStars();
     const stars = document.querySelectorAll(".star");
-    const tooltip = document.querySelector(".tooltip");
     stars.forEach(star => {
         star.addEventListener("mouseover", (event) => {
             // Get the ID of the star
@@ -163,8 +163,19 @@
             // Select the tooltip
             const tooltip = document.querySelector(".tooltip");
             // Set the position of the tooltip to be just above and to the right of the star
-            tooltip.style.left = event.clientX + 10 + "px";
-            tooltip.style.top = event.clientY - tooltip.offsetHeight - 10 + "px";
+            let cursorX = event.clientX;
+            let cursorY = event.clientY;
+
+            if (cursorY > window.innerHeight - 100) {
+                tooltip.style.top = cursorY - tooltip.offsetHeight - 10 + "px";
+            } else {
+                tooltip.style.top = cursorY + 10 + "px";
+            }
+            if (cursorX < 100) {
+                tooltip.style.left = cursorX + 10 + "px";
+            } else {
+                tooltip.style.left = cursorX - tooltip.offsetWidth - 10 + "px";
+            }
             switch (starId) {
                 case "1":
                     tooltip.innerHTML = "<h2>You've got a skill issue</h2>" +
@@ -203,14 +214,6 @@
                 default:
                     break;
             }
-            // Check if the tooltip is going out of the window //this is not working
-            if (tooltip.offsetLeft + tooltip.offsetWidth > window.innerWidth) {
-                tooltip.style.left = window.innerWidth - tooltip.offsetWidth - 10 + "px";
-            }
-            if (tooltip.offsetTop + tooltip.offsetHeight > window.innerHeight) {
-                tooltip.style.top = window.innerHeight - tooltip.offsetHeight - 10 + "px";
-            }
-            // Show the tooltip
             tooltip.style.display = "block";
         });
         star.addEventListener("mouseout", () => {
