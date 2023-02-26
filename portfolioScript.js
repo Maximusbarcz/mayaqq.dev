@@ -47,7 +47,9 @@ function genStars() {
         });
         const tooltip = document.createElement("div");
         tooltip.classList.add("tooltip");
-        tooltip.innerHTML = `<div class="tooltip-title">${names[i][0]}</div><div class="tooltip-description">${names[i][2]}</div><img src="${names[i][3]}" alt="icon" class="tooltip-icon">`;
+        tooltip.innerHTML = `<div class="tooltip-title">${names[i][0]}</div>
+                             <div class="tooltip-description">${names[i][2]}</div>
+                             <img src="${names[i][3]}" alt="icon" class="tooltip-icon">`;
         tippy(star, {
             content: tooltip.innerHTML,
             placement: 'top',
