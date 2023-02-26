@@ -16,6 +16,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .black-hole {
@@ -24,6 +25,7 @@
     border-radius: 50%; /* 50px / 2 = 25px */
     background-color: black;
     box-shadow: 0 0 100px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff;
+    animation: fadein 4s ease-in-out;
 }
 
 .star {
@@ -37,7 +39,7 @@
     cursor: pointer;
     box-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff;
     transition: transform 0.2s ease-in-out;
-    z-index: 3; /* Set the z-index to a high value */
+    z-index: 3;
 }
 
 .star::before {
@@ -64,6 +66,8 @@
     transform: translate(-50%, -50%);
     position: absolute;
     padding: 0;
+    animation: fadein 3s ease-in-out;
+    z-index: 2;
 }
 
 @keyframes fadein {
@@ -74,6 +78,7 @@
         opacity: 1;
     }
 }
+
 .tooltip-title {
     text-align: center;
     font-family: "JetBrains Mono", monospace;
@@ -106,4 +111,34 @@ p {
 .tippy-box[data-theme~='tooltip'] {
     background-color: #181A1B;
     color: white;
+}
+
+.arrow-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.back {
+    width: 100px;
+    height: 100px;
+    animation: fadein 6s ease-in-out;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.back:hover {
+    transform: scale(1.1);
+}
+
+.desc {
+    animation: fadein 20s ease-in-out;
+
 }
