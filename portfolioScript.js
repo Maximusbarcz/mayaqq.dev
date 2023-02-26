@@ -5,7 +5,7 @@ const starContainer = document.querySelector(".star-container");
 //create an array of strings
 const names = [
     // ["Name", "Link", "Description", "Image"],
-    ["Mayaqq.dev", "https://mayaqq.dev", "The website you're on right now!", "media/avtar.webp"],
+    ["Mayaqq.dev", "https://mayaqq.dev", "The website you're on right now!", "media/avatar.png"],
     ["Endless", "https://github.com/MayaqqDev/Endless", "Discover the mysteries of the End dimension like never before in \"Endless\"! Explore new lands, find hidden secrets, and unravel the unknown as you embark on an adventure like no other.", "https://github.com/MayaqqDev/Endless/blob/1.19/src/main/resources/assets/endless/icon.png?raw=true"],
     ["Spectrum Jetpacks", "https://github.com/MayaqqDev/Spectrum-Jetpacks", "Jetpacks but its gay", "https://github.com/MayaqqDev/spectrum-jetpacks/blob/1.19/src/main/resources/assets/spectrumjetpacks/icon.png?raw=true"],
     ["Classroomtils", "https://github.com/MayaqqDev/Classroomtils", "A firefox plugin for google classroom!", ""],
