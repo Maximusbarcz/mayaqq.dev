@@ -134,3 +134,9 @@ a {
 .spotify {
     padding-top: 20px;
 }
+
+.tippy-box[data-theme~='tooltip'] {
+    background-color: #181A1B;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+}

@@ -115,3 +115,83 @@ window.addEventListener("keydown", function(event) {
         sound.pause();
     }
 });
+
+let portfolio = document.getElementById("portfolio");
+let github = document.getElementById("github");
+let discord = document.getElementById("discord");
+let kofi = document.getElementById("kofi");
+
+let info = document.getElementById("title");
+let playlist = document.getElementById("playlist");
+
+tippy(portfolio, {
+    content: "<Strong>Portfolio</Strong>",
+    placement: 'bottom',
+    arrow: true,
+    followCursor: true,
+    animation: 'shift-away',
+    theme: 'tooltip',
+    duration: [200, 200],
+    allowHTML: true,
+    }
+)
+
+tippy(github, {
+        content: "<Strong>Github</Strong>",
+        placement: 'bottom',
+        arrow: true,
+        followCursor: true,
+        animation: 'shift-away',
+        theme: 'tooltip',
+        duration: [200, 200],
+        allowHTML: true,
+    }
+)
+
+tippy(discord, {
+        content: "<Strong>Discord</Strong>",
+        placement: 'bottom',
+        arrow: true,
+        followCursor: true,
+        animation: 'shift-away',
+        theme: 'tooltip',
+        duration: [200, 200],
+        allowHTML: true,
+    }
+)
+
+tippy(kofi, {
+        content: "<Strong>Ko-fi</Strong>",
+        placement: 'bottom',
+        arrow: true,
+        followCursor: true,
+        animation: 'shift-away',
+        theme: 'tooltip',
+        duration: [200, 200],
+        allowHTML: true,
+    }
+)
+
+tippy(info, {
+        content: "<Strong>More info about me!</Strong>",
+        placement: 'bottom',
+        arrow: true,
+        followCursor: true,
+        animation: 'shift-away',
+        theme: 'tooltip',
+        duration: [200, 200],
+        allowHTML: true,
+    }
+)
+
+tippy(playlist, {
+        content: "<Strong>My playlist!</Strong>",
+        placement: 'bottom',
+        arrow: true,
+        followCursor: true,
+        animation: 'shift-away',
+        theme: 'tooltip',
+        duration: [200, 200],
+        allowHTML: true,
+    }
+)
