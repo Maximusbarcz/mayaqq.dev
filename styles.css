@@ -46,6 +46,15 @@ h1 {
     animation: fadein 1s ease-in-out;
 }
 
+.spotify-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+}
+
 @keyframes fadein {
     from {opacity: 0;}
     to {opacity: 1;}
