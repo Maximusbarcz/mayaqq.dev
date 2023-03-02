@@ -35,9 +35,9 @@ var phrases = [
     'a person who has something happen when you click my name (or pfp)',
 ];
 
-var phraseElement = document.getElementById('phrase');
-var titleElement = document.getElementById('title');
-var moreInfo = document.getElementById('more-info');
+const phraseElement = document.getElementById('phrase');
+const titleElement = document.getElementById('title');
+const moreInfo = document.getElementById('more-info');
 
 titleElement.addEventListener('click', function () {
     moreInfo.style.display = 'block';
@@ -45,9 +45,9 @@ titleElement.addEventListener('click', function () {
 
 function typeWriter() {
 
-    var txt = phrases[Math.floor(Math.random() * phrases.length)];
-    var i = 0;
-    var speed = 50;
+    const txt = phrases[Math.floor(Math.random() * phrases.length)];
+    let i = 0;
+    const speed = 50;
 
     function type() {
         if (i < txt.length) {
@@ -73,32 +73,40 @@ function typeWriter() {
 
 typeWriter();
 
-
-const currentMonth = new Date().getMonth();
-
-var sound = document.getElementById('sound');
-
-var image = document.getElementsByClassName("pfp")[0];
-var modal = document.getElementById("modal");
-var slider = document.getElementById("volume-slider");
-
-slider.addEventListener('input', function() {
-    sound.volume = slider.value / 100;
-});
-
+const image = document.getElementsByClassName("pfp")[0];
+const uwu = document.getElementById("uwu");
+const video = document.getElementsByTagName('video')[0];
+const slider = document.getElementById("uwu-video-slider");
+const playButton = document.getElementById("uwu-play");
+const sound = document.getElementById("uwu-volume-slider");
 
 // Listen for the click event on the image
 image.addEventListener("click", function() {
     // Play the sound
-    sound.play();
-    modal.style.display = "block";
+    //sound.play();
+    video.play();
+    uwu.style.display = "block";
 });
 
-modal.addEventListener("click", function(event) {
+playButton.addEventListener("click", function() {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+});
+
+sound.addEventListener("input", function() {
+    video.volume = this.value;
+});
+
+uwu.addEventListener("click", function(event) {
     // If the user clicks on the modal window, but not on the modal content, close the modal window
     if (event.target === this) {
         this.style.display = "none";
-        sound.pause();
+        video.pause();
+        slider.max = video.duration;
+        slider.value = video.currentTime;
     }
 });
 moreInfo.addEventListener("click", function(event) {
@@ -108,11 +116,20 @@ moreInfo.addEventListener("click", function(event) {
     }
 });
 
+slider.addEventListener("input", function() {
+    video.currentTime = this.value;
+});
+
+video.addEventListener("timeupdate", function() {
+    slider.value = this.currentTime;
+});
+
 window.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
-        modal.style.display = "none";
+        uwu.style.display = "none";
         moreInfo.style.display = "none";
-        sound.pause();
+        video.pause();
+        video.currentTime = 0;
     }
 });
 
