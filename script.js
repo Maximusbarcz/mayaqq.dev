@@ -96,6 +96,15 @@ playButton.addEventListener("click", function() {
     }
 });
 
+video.addEventListener("click", function() {
+    if (video.paused) {
+        video.play();
+        } else {
+        video.pause();
+
+    }
+});
+
 sound.addEventListener("input", function() {
     video.volume = this.value;
 });
