@@ -77,6 +77,8 @@ h1 {
     height: 100%; /* Set the height of the modal window to the height of the screen */
     overflow: auto; /* Enable scrollbars if the content is taller than the screen */
     background-color: rgba(0, 0, 0, 0.4); /* Set the background color to a semi-transparent black */
+    animation: fadein 1s ease-in-out;
+
 }
 
 /* Style the modal content */
