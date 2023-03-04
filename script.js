@@ -142,6 +142,22 @@ window.addEventListener("keydown", function(event) {
     }
 });
 
+let pride = document.getElementById("pride-counter");
+
+// Get today's date
+const today = new Date();
+
+// Calculate the date of June 1st of the current year
+const june = new Date(today.getFullYear(), 5, 1);
+
+// Calculate the difference between today and June 1st, in milliseconds
+const diffMs = june.getTime() - today.getTime();
+
+// Convert the difference to days and round down to the nearest integer
+const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
+
+pride.innerHTML = "Days until pride month: " + diffDays + " days";
+
 let portfolio = document.getElementById("portfolio");
 let github = document.getElementById("github");
 let discord = document.getElementById("discord");
@@ -212,6 +228,18 @@ tippy(info, {
 
 tippy(playlist, {
         content: "<Strong>My playlist!</Strong>",
+        placement: 'bottom',
+        arrow: true,
+        followCursor: true,
+        animation: 'shift-away',
+        theme: 'tooltip',
+        duration: [200, 200],
+        allowHTML: true,
+    }
+)
+
+tippy(pride, {
+        content: "<Strong>Wooo! pride month!</Strong>",
         placement: 'bottom',
         arrow: true,
         followCursor: true,

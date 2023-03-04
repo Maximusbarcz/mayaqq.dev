@@ -201,3 +201,7 @@ a {
     color: white;
     font-family: "JetBrains Mono", monospace;
 }
+
+#pride-counter {
+    cursor: default;
+}
