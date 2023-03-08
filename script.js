@@ -143,6 +143,8 @@ window.addEventListener("keydown", function(event) {
 });
 
 let pride = document.getElementById("pride-counter");
+let death = document.getElementById("die-counter");
+let birthday = document.getElementById("birthday-counter");
 
 // Get today's date
 const today = new Date();
@@ -153,10 +155,18 @@ const june = new Date(today.getFullYear(), 5, 1);
 // Calculate the difference between today and June 1st, in milliseconds
 const diffMs = june.getTime() - today.getTime();
 
+// my birthday is on the 24ht of november
+const birthdayDate = new Date(today.getFullYear(), 10, 24);
+
+const diffMs2 = birthdayDate.getTime() - today.getTime();
+
+const birthdayDays = Math.floor(diffMs2 / (1000 * 60 * 60 * 24)) + 1;
 // Convert the difference to days and round down to the nearest integer
 const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
 
 pride.innerHTML = "Days until pride month: " + diffDays + " days";
+death.innerHTML = "Days until I die: " + Math.floor(Math.random() * 1000) + " days";
+birthday.innerHTML = "Days until my birthday: " + birthdayDays + " days";
 
 let portfolio = document.getElementById("portfolio");
 let github = document.getElementById("github");
@@ -240,6 +250,18 @@ tippy(playlist, {
 
 tippy(pride, {
         content: "<Strong>Wooo! pride month!</Strong>",
+        placement: 'bottom',
+        arrow: true,
+        followCursor: true,
+        animation: 'shift-away',
+        theme: 'tooltip',
+        duration: [200, 200],
+        allowHTML: true,
+    }
+)
+
+tippy(death, {
+        content: "<Strong>I am fine :)</Strong>",
         placement: 'bottom',
         arrow: true,
         followCursor: true,
