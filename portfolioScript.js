@@ -66,16 +66,5 @@ function genStars() {
 // Call the genStars function to generate the stars
 genStars();
 
-let back = document.getElementsByClassName("back")[0];
-tippy(back, {
-    content: "<Strong>Back to the homepage</Strong>",
-    placement: 'bottom',
-    arrow: true,
-    followCursor: true,
-    animation: 'shift-away',
-    theme: 'tooltip',
-    duration: [200, 200],
-    allowHTML: true,
-});
 // Regenerate the stars when the window is resized
 window.addEventListener('resize', genStars);

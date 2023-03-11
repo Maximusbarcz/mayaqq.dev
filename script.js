@@ -36,12 +36,22 @@ var phrases = [
 ];
 
 const phraseElement = document.getElementById('phrase');
-const titleElement = document.getElementById('title');
-const moreInfo = document.getElementById('more-info');
+const image = document.getElementsByClassName("pfp")[0];
+const uwu = document.getElementById("uwu");
+const video = document.getElementsByTagName('video')[0];
+const slider = document.getElementById("uwu-video-slider");
+const playButton = document.getElementById("uwu-play");
+const sound = document.getElementById("uwu-volume-slider");
+let pride = document.getElementById("pride-counter");
+let death = document.getElementById("die-counter");
+let birthday = document.getElementById("birthday-counter");
+let github = document.getElementById("github");
+let discord = document.getElementById("discord");
+let kofi = document.getElementById("kofi");
+let playlist = document.getElementById("playlist");
+let scroll = document.getElementsByClassName("arrow-down-container");
 
-titleElement.addEventListener('click', function () {
-    moreInfo.style.display = 'block';
-});
+// typewriter code:
 
 function typeWriter() {
 
@@ -73,14 +83,22 @@ function typeWriter() {
 
 typeWriter();
 
-const image = document.getElementsByClassName("pfp")[0];
-const uwu = document.getElementById("uwu");
-const video = document.getElementsByTagName('video')[0];
-const slider = document.getElementById("uwu-video-slider");
-const playButton = document.getElementById("uwu-play");
-const sound = document.getElementById("uwu-volume-slider");
+// event listerners:
 
-// Listen for the click event on the image
+scroll[0].addEventListener("click", function() {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+});
+
+scroll[1].addEventListener("click", function() {
+    window.scrollTo({
+        top: window.innerHeight + window.innerHeight,
+        behavior: "smooth"
+    });
+});
+
 image.addEventListener("click", function() {
     // Play the sound
     //sound.play();
@@ -118,12 +136,6 @@ uwu.addEventListener("click", function(event) {
         slider.value = video.currentTime;
     }
 });
-moreInfo.addEventListener("click", function(event) {
-    // If the user clicks on the modal window, but not on the modal content, close the modal window
-    if (event.target === this) {
-        this.style.display = "none";
-    }
-});
 
 slider.addEventListener("input", function() {
     video.currentTime = this.value;
@@ -136,57 +148,36 @@ video.addEventListener("timeupdate", function() {
 window.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
         uwu.style.display = "none";
-        moreInfo.style.display = "none";
         video.pause();
         video.currentTime = 0;
+        window.scrollTo({
+            //scroll to the top of the page
+            top: 0,
+            behavior: "smooth"
+        });
     }
 });
 
-let pride = document.getElementById("pride-counter");
-let death = document.getElementById("die-counter");
-let birthday = document.getElementById("birthday-counter");
+// counters
 
-// Get today's date
 const today = new Date();
 
-// Calculate the date of June 1st of the current year
 const june = new Date(today.getFullYear(), 5, 1);
 
-// Calculate the difference between today and June 1st, in milliseconds
 const diffMs = june.getTime() - today.getTime();
 
-// my birthday is on the 24ht of november
 const birthdayDate = new Date(today.getFullYear(), 10, 24);
 
 const diffMs2 = birthdayDate.getTime() - today.getTime();
 
 const birthdayDays = Math.floor(diffMs2 / (1000 * 60 * 60 * 24)) + 1;
-// Convert the difference to days and round down to the nearest integer
 const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
 
 pride.innerHTML = "Days until pride month: " + diffDays + " days";
 death.innerHTML = "Days until I die: " + Math.floor(Math.random() * 1000) + " days";
 birthday.innerHTML = "Days until my birthday: " + birthdayDays + " days";
 
-let portfolio = document.getElementById("portfolio");
-let github = document.getElementById("github");
-let discord = document.getElementById("discord");
-let kofi = document.getElementById("kofi");
-
-let info = document.getElementById("title");
-let playlist = document.getElementById("playlist");
-
-tippy(portfolio, {
-    content: "<Strong>Portfolio</Strong>",
-    placement: 'bottom',
-    arrow: true,
-    followCursor: true,
-    animation: 'shift-away',
-    theme: 'tooltip',
-    duration: [200, 200],
-    allowHTML: true,
-    }
-)
+// tooltips
 
 tippy(github, {
         content: "<Strong>Github</Strong>",
@@ -214,18 +205,6 @@ tippy(discord, {
 
 tippy(kofi, {
         content: "<Strong>Ko-fi</Strong>",
-        placement: 'bottom',
-        arrow: true,
-        followCursor: true,
-        animation: 'shift-away',
-        theme: 'tooltip',
-        duration: [200, 200],
-        allowHTML: true,
-    }
-)
-
-tippy(info, {
-        content: "<Strong>More info about me!</Strong>",
         placement: 'bottom',
         arrow: true,
         followCursor: true,
