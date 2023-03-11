@@ -180,7 +180,7 @@ a {
 }
 
 .page {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #181A1B;
 }
 
@@ -237,7 +237,7 @@ a {
     /* make the boxes look like they are floating */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: fit-content;
-    height: 300px;
+    max-height: 40%;
     flex-shrink: 0;
     /* align the box content to the vertical center */
     display: flex;

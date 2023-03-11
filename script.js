@@ -158,6 +158,13 @@ window.addEventListener("keydown", function(event) {
     }
 });
 
+//check if the user is on mobile
+if (window.innerWidth <= 800 && window.innerHeight <= 600) {
+    for (let i = 0; i < scroll.length; i++) {
+        scroll[i].style.display = "none";
+    }
+}
+
 // counters
 
 const today = new Date();
