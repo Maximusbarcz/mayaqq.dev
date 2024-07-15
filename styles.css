@@ -20,15 +20,12 @@ p {
     padding: 5px;
 }
 
-.pfp:hover {
-    cursor: pointer;
-}
-
 .title {
     transform: scale(1);
     margin: 10px;
     min-height: 30px;
 }
+
 h1 {
     margin: 3px;
     color: #f9A7FF;
@@ -43,20 +40,11 @@ h1 {
     position: absolute;
     padding: 0;
 
-    color: white;
+    color: #F8F8F2;
     font-family: "JetBrains Mono", monospace;
     font-size: 20px;
 
     animation: fadein 1s ease-in-out;
-}
-
-.spotify-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    overflow: hidden;
 }
 
 @keyframes fadein {
@@ -69,197 +57,34 @@ h1 {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background-color: #181A1B;
+    background-color: #282A36;
     font-family: "JetBrains Mono", monospace;
-}
-
-/* Style the modal window */
-.uwu {
-    display: none; /* Hide the modal window by default */
-    position: fixed; /* Make the modal window fixed positioned */
-    z-index: 1; /* Set the z-index to a high value */
-    left: 0;
-    top: 0;
-    width: 100%; /* Set the width of the modal window to the width of the screen */
-    height: 100%; /* Set the height of the modal window to the height of the screen */
-    overflow: auto; /* Enable scrollbars if the content is taller than the screen */
-    background-color: rgba(0, 0, 0, 0.4); /* Set the background color to a semi-transparent black */
-    animation: fadein 1s ease-in-out;
-
-}
-
-/* Style the modal content */
-.uwu-content {
-    position: relative; /* Make the content relative positioned */
-    top: 50%; /* Center the content vertically */
-    transform: translateY(-50%); /* Center the content vertically */
-    background-color: black; /* Set the background color to white */
-    border-radius: 5%;
-    padding: 20px; /* Add some padding to the content */
-    width: 80%; /* Set the width of the content to 80% of the screen width */
-    height: 80%;
-    max-width: 90%; /* Set a maximum width for the content */
-    max-height: 90%; /* Set a maximum height for the content */
-    margin: 0 auto; /* Center the content horizontally */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add a drop shadow to the content */
-}
-
-.uwu-more {
-    position: relative; /* Make the content relative positioned */
-    top: 13%; /* Center the content vertically */
-    transform: translateY(-50%); /* Center the content vertically */
-    background-color: black; /* Set the background color to white */
-    border-radius: 5%;
-    padding: 20px; /* Add some padding to the content */
-    width: 80%; /* Set the width of the content to 80% of the screen width */
-    height: 2.5%;
-    max-width: 90%; /* Set a maximum width for the content */
-    max-height: 90%; /* Set a maximum height for the content */
-    margin: 0 auto; /* Center the content horizontally */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add a drop shadow to the content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.uwu-volume-slider {
-    width: 70%;
-}
-
-.uwu-play {
-
-}
-
-/* Style the image in the modal content */
-.uwu-image {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 1%;
-    border: 0;
-}
-
-.uwu-volume-slider {
-    max-width: 10%;
-}
-.uwu-video-slider {
-    width: 90%;
-    max-width: 90%;
-}
-
-.uwu-play {
-    /* this is a play ubtton */
-    background-color: #181A1B;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 10%;
 }
 
 a {
-    color: lightblue;
-}
-
-.spotify {
-    padding-top: 20px;
-}
-
-.tippy-box[data-theme~='tooltip'] {
-    background-color: #181A1B;
-    color: white;
-    font-family: "JetBrains Mono", monospace;
+    color: #8BE9FD;
 }
 
 .page {
     min-height: 100vh;
-    background-color: #181A1B;
-}
-
-#first-page {
-    background-color: #181A1B;
-
-}
-
-.arrow-down-container {
-    position: absolute;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 20px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    animation: fadein 5s ease-in-out;
-}
-
-#second-page {
-    background-color: black;
-}
-
-.more-info-content {
-    color: white;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 20px;
-    position: relative; /* Make the content relative positioned */
-    background-color: #0C0D0D;
-    overflow-y: auto;
-    /* make boxes inside this div be next to each other */
-    display: flex;
-    /* make the boxes go down if they would overflow */
-    flex-wrap: wrap;
-    height: 100vh;
-}
-
-.bio-point {
-    color: white;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 20px;
-    position: relative; /* Make the content relative positioned */
-    background-color: #181A1B;
-    padding: 20px;
-    overflow-y: auto;
-    border-radius: 30px;
-    margin: 35px;
-    /* make the boxes look like they are floating */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: fit-content;
-    max-height: 40%;
-    flex-shrink: 0;
-    /* align the box content to the vertical center */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: #282A36;
 }
 
 h3 {
     color: #f9A7FF;
 }
 
-#main-title {
-    max-width: 50%;
+.spoiler {
+    background-color: #44475A;
+    color: transparent;
+    user-select: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    border-radius: 3px;
+    padding: 2px;
 }
 
-#third-page {
-    background-color: #181A1B;
-    height: 100vh;
+.spoiler:hover {
+    background-color: inherit;
+    color: inherit;
 }
 
-.portfolio {
-    width: 100%;
-    height: 100vh;
-    border: none;
-}
