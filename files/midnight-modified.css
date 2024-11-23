@@ -1,7 +1,7 @@
 /* customize things here */
 :root {
 	/* font, change to 'gg sans' for default discord font*/
-	--font: 'gg sans';
+	/*--font: 'gg sans'; */
 
 	/* top left corner text */
 	--corner-text: 'Midnight';
@@ -79,10 +79,12 @@
 }
 
 /* change fonts (edit the variables above, not this part) */
+/*
 :root {
 	--font-primary: var(--font), 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--font-display: var(--font), 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+ */
 
 /* reduced motion */
 :root.reduce-motion {
@@ -696,9 +698,9 @@ button.button_dd4f85 /* small buttons */,
 	position: relative;
 	height: 16px;
 	line-height: 16px;
-	font-family: var(--font);
+	/*font-family: var(--font);
 	font-size: 13px;
-	font-weight: 900;
+	font-weight: 900; */
 	color: var(--text-5);
 	transform: scaleX(1.2);
 	margin-left: 6px;
